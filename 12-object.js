@@ -1,6 +1,6 @@
 /*singleton:are classes which can be instanced once,and can be accessed globally
 if we develop through LITERALS then singleton is not formed*/
-//if created by => object.create   then singleton is formed
+//if created through constructor => object.create   then singleton is formed
 
 
 
