@@ -5,16 +5,26 @@ welcomeMessage: function(){
 console.log('${this.username},welcome to website ')
 /*if we console it inside then*/
 //console.log(this) 
-/*it wil print all current context */
+           /*it wil print all current context 
+             {
+             username: 'Amir',
+              price: 1244,
+             welcomeMessage: [Function: welcomeMessage]
+               }
+                Amir,welcome to website
+              {
+              username: 'Rather',
+              price: 1244,
+             welcomeMessage: [Function: welcomeMessage]*/
 }
   
 }
-//  user.welcomeMessage() //Amir , welcome to website
-// /* this keyword tells about current contex, now if we change the current context from Amir to Rather*/
-//  user.username="Rather"
-//  user.welcomeMessage()//Rather,welcome to website
+ user.welcomeMessage() //Amir , welcome to website
+/* this keyword tells about current contex, now if we change the current context from Amir to Rather*/
+ user.username="Rather"
+ user.welcomeMessage()//Rather,welcome to website
 
-//console.log(this) //{} empty bec we are in node environment as there is context in global environment
+//console.log(this) //{} empty bec we are in node environment as there is no context in global environment
 
 
 
@@ -71,29 +81,4 @@ const addTwoNumber= (num1,num2) =>  ({username:"Amir"})// Amir
 console.log(addTwoNumber(4,5))
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//explicit return type in type we have to use return
-//const addTwoNumber= (num1,num2) =>  num1+num2// 9  or we can write it this way
-const addTwoNumberss= (num1,num2) =>  (num1+num2)//9 if we wrape it in()then no need of return,if in{} then return is must
-console.log(addTwoNumberss(4,5))
-
-
-
-
+//in explicit return type we have to use return
