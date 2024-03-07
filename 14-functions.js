@@ -53,7 +53,7 @@ function addTwoNumbers(number1,numbr2) {
 
 
 function userLoginMessage(username){
-    return '$(username) just logged in'
+    return `$(username) just logged in`
 }
 //userLoginMessage("Amir")//it executes but value not printed bec it returns the value but not said to store in a variable, or to print for that we do
 // console.log(userLoginMessage("Amir"))//Amir just logged in
@@ -68,7 +68,7 @@ function userLoginMessage(username){
         return
         
     }
-    return '$(username) just logged in'
+    return `$(username) just logged in`
 }
 // console.log(userLoginMessage("Amir"))
 // console.log(userLoginMessage())//undefined
@@ -83,7 +83,7 @@ function userLoginMessage(username){
         return
         
     }
-    return '$(username) just logged in'
+    return `$(username) just logged in`
 }
 //console.log(userLoginMessage("Amir"))
 // console.log(userLoginMessage())//undefined
@@ -96,7 +96,7 @@ function userLoginMessage(username="Rather"){
         return
         
     }
-    return '$(username) just logged in'
+    return `$(username) just logged in`
 }
 console.log(userLoginMessage("Amir"))
 console.log(userLoginMessage())//undefined

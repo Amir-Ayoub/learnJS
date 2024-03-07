@@ -30,7 +30,7 @@ function calculatePrice(...num1){
 // }
 
 function handleObject(anyobject){//as user is object,so we pass anyobject in parameter
-    console.log('name is ${anyobject.name} and price is ${anyobject.price}');
+    console.log(`name is ${anyobject.name} and price is ${anyobject.price}`);
 }
 //handleObject(user)
 

@@ -2,7 +2,7 @@ const user={
     username:"Amir",
 price:1244,
 welcomeMessage: function(){
-console.log('${this.username},welcome to website ')
+console.log(`${this.username},welcome to website `)
 /*if we console it inside then*/
 //console.log(this) 
            /*it wil print all current context 
