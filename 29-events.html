@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events </title>
+</head>
+<body>
+    <h2 >INTERNET IMAGES</h2>
+    <ul id="images">
+        <li><img width="200px" height="200px" id="bengali tiger" src="https://img.freepik.com/free-photo/amazing-bengal-tiger-nature_475641-1205.jpg?w=740&t=st=1711175592~exp=1711176192~hmac=efda12f68f4ffddaa23e97c66cae25bb78bae7264c01d51282ca845bf40b0888" alt="tiger's image" onclick="alert('tiger clicked')"></li>
+         <!--write onclick code in this is not scable, avoid this in html -->
+        <li><img width="200px" height="200px" id="dear" src="https://img.freepik.com/free-photo/red-deer-nature-habitat-during-deer-rut-european-wildlife_475641-943.jpg?w=360&t=st=1711175686~exp=1711176286~hmac=2fda6afbae458a75a35a55361c98bdb9bba852fe0d0c29c0ee2a1dfd3812dec0" alt="dear's image"></li>
+        <li><img width="200px" height="200px" id="zebra" src="https://images.pexels.com/photos/247376/pexels-photo-247376.jpeg?cs=srgb&dl=pexels-pixabay-247376.jpg&fm=jpg" alt="zebra's image"></li>
+        <li><img width="200px" height="200px" id="parrot" src="https://img.freepik.com/free-photo/group-colorful-birds-are-flying-formation-with-one-being-flown-by-another_188544-8130.jpg?w=740&t=st=1711175816~exp=1711176416~hmac=10290d12b407facbdf569d4788689a5f32a7bd1b295328e666b982e73c5e74ab" alt="parrot's image"></li>
+        <li><a style="color: brown; font-size: medium;" href="https://google.com" id="google">Google</a></li>
+       
+    </ul>
+</body>
+<script>
+    // document.getElementById("bengali tiger").onclick = function (){
+    //     alert("bengali tiger clicked")//here onclick function can't provide more information ,provides less features
+    // }
+
+    // attachEvent()  used in early times
+    // jQuery -onEventListener
+    //***** latest approach
+    // document.getElementById("dear").addEventListener('click', function(){
+    //     alert("dear clicked")
+    //})
+
+
+     //document.getElementById("dear").addEventListener('click', function(e){
+      //console.log(e)})
+
+
+        /* event propagation(when which value is printed),here all images are in ul, if we click any image except 
+        parrot it shows ul clicked and while on clicking parrot it shows clicked parrot and clicked ul*/
+        // document.getElementById("images").addEventListener('click', function(e){
+        //     console.log("clicked inside ul");
+        // },false)//false is by default if we use true then it goes top to bottom means it show ul clicked and parrot clicked called capturing
+       
+       
+            // document.getElementById("parrot").addEventListener('click', function(e){
+            //     console.log("clicked parrot");
+            // },false)//false goes   bottom to top called bubbling
+       
+       
+        //     document.getElementById("dear").addEventListener('click', function(e){
+        //         console.log("clicked dear");
+        //         e.stopPropagation()//this is used to stop bubbling
+        //     },false)
+
+            // document.getElementById("google").addEventListener('click',function(e){
+            //     e.preventDefault()
+            //     e.stopPropagation()
+            //     console.log("google clicked")
+            
+            // },false)
+
+
+            // on-clicking an image,should be removed that image ,two methods
+           document.querySelector('#images').addEventListener('click',function(e){
+            console.log(e.target.tagName)
+            /*from both two methods there arises a problem, while clicking outside the image it removes all images,
+            bec clicking outside,parentNode is ul and it removes all the images in ul, for that we use strick checks */
+            if(e.target.tagName==='IMG'){
+                console.log(e.target.alt)
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+            }
+            // another method
+            //removeIt.parentNode.removeChild(removeIt)
+
+            
+           },false)
+
+
+
+        </script>
+
+</html>
