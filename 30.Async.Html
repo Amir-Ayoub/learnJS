@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color:black; color: azure;">
+    <h1> HELLO World</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // setTimeout(function (){//set time when to print
+    //     console.log("Amir Ayoub")
+    // }, 4000)// will be printed onlt once
+    //////// or write in this way
+    const name=function(){
+        console.log("Amir Ayoub")
+    }
+    setTimeout(name,2000)
+
+    //document.querySelector('h1').innerHTML="Amir Ayoub Rather" // changes original h1 
+    // can do the same in another way
+    const changeText=function(){
+        document.querySelector('h1').innerHTML="Amir Ayoub Rather"
+    }
+    const time=setTimeout(changeText,4000)
+
+//we can stop the enent before execution using clearTimeOut(),click stop button
+    document.querySelector('#stop').addEventListener('click',function(){
+    clearTimeout(time)
+    console.log("stopped")
+    })
+    
+</script>
+</html>

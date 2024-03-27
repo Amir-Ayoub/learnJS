@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: rgb(41, 38, 38);color: white;">
+    <h1>Amir Ayoub</h1>
+    <button id="start">Start</button>
+    <button id="stoped">Stop</button>
+</body>
+<script>
+    // setInterval(function(){//prints contineously after 2sec
+    //     console.log("Amir",Date.now())//gives exact date in number form otherwise it wil usse count method if we ignore date.now()method
+    // },2000)
+
+    ///////can write in another way
+//     const interval=function(str){
+//          console.log(str,Date.now())
+//      }
+//     const stop=setInterval(interval,2000,"hello")//to stop contionous execution we do
+//       //clearInterval(stop)//stops execution
+
+
+//////use buttons to start and stop the executions
+
+   const interval = function(str) {
+    console.log(str, Date.now());
+};
+
+let stopInterval; // Variable to hold the interval ID
+
+document.querySelector('#start').addEventListener('click', function() {
+    stopInterval = setInterval(interval, 2000, "hello");
+    console.log("started");
+});
+
+document.querySelector('#stoped').addEventListener('click',function(){
+     clearTimeout(stopInterval)
+     console.log("stopped")
+  
+});
+
+</script>
+</html>
